@@ -23,66 +23,45 @@ In this lab, you'll be creating a simple library app to keep track of books.
 
 When a user goes to `/`, they should see a list of all of the books in the API. When a user goes to `/books/:id`, they should see a single book. On the `/books/:id` page, a user should be able to edit or delete a book.
 
-Your data (a list of books) is available at `https://super-crud.herokuapp.com/books`. You and your classmates will all be working with the shared API; keep that in mind as you make changes.  If there are no books left or far too many books, feel free to reset the database by clicking [the reset button](http://super-crud.herokuapp.com/reset). Don't do this without warning your colleagues, though. They might be puzzled why their newly created book resources aren't appearing in the database.
+Your data (a list of books) is available at this [endpoint](https://super-crud.herokuapp.com/books). You and your fellow developers will all be working with the shared API; keep that in mind as you make changes.  If there are no books left or far too many books, feel free to reset the database by clicking [the reset button](http://super-crud.herokuapp.com/reset). Keep in mind all applications will be sharing data.
 
 ### Expectations
 
-Your finished product will:
+Your finished product will have the following user stories:
 
-  1. Route the user to an index page at `/`. That page will:
-    * display all of the books.
-    * show the image, title, author, and release date of each book.
-    * include a link to the show book page on the title of each book.
-  2. Route the use to a show book page at `/books/:id` for any existing book id. The show page will:
-    * display all of the data about the specific book.
-    * have a delete button that deletes the specific book from the database and, when successfully deleted, redirects the user to the home page.
-    * have an edit button that reveals a form for the user to edit the attributes of the book.
-    * The form will have a save button that sends the edits to the database and, when successfully updated, redirects the user to the home page.
-    * have a cancel button that does not save any of the changes the user just made.
+  1. On the index page (`/`), the user can:
+    * see all of the books.
+    * see the image, title, author, and release date of each book.
+    * follow a link to the show book page on the title of each book.
+  2. On the show page (`/books/:id`), the user can:
+    * see all of the data for the book.
+    * click the delete button to remove a specific book from the database and, on success, be redirected back to the index page.
+    * click an edit button that reveals a form to update the attributes of the book.
+    * submit the form to update the database and, on success, be redirected to the index page.
+    * click a cancel button that does not save any of the changes just made.
 
 ### This Repo's Structure
 
-There are three branches in this repo that you might want to pay attention to: `master`, `skeleton`, and `solutions`.
+> Note: there is a `solutions` branch, while the `master` branch has no starter code.
 
-The `master` branch has these instructions, with no starter code.
-
-The `skeleton` branch has the basic parts of the app set up, with some comments to help you as you build out the project. Refer to this branch if you're having trouble setting up your angular app, or if you want relatively spoiler-free hints on how to approach the project. (If you run it as is, you will see errors!)
-
-The `solutions` branch has a fully built-out application that meets all the expectations above. Reference it if you're really stuck, but remember you may have your app set up differently!
-
-**You can work directly from the `master` branch or create another branch for your work!**
+**It is recommended to create a seperate branch for each user story!**
 
 ### Getting Started
 
 1. Fork and clone this repo.
 2. Change directories into `angular-books-crud-lab`.
-3. Start creating the files you need for your project! (`index.html` and `app.js` are safe bets to start.)
+3. Start creating the files you need for your project, such as `index.html` and `app.js`.
 
 ### Tips
 
 * Commit frequently!
-* Once you add client-side routing,  Angular will need to be served from a server. Run `budo -P --host=localhost --open` from the Terminal (inside your project directory). This starts a simple server that by default will serve up your `index.html` on `/` and any route it doesn't recognize (like `/books`)!  Note: Your `index.html` *must* be in your main project directory for this server setup. 
-* The books api is set up with RESTful routes, so follow RESTful routing conventions.  You can test endpoints with Postman or cURL, or by setting up a simple request to trigger them. 
-* Look at (`console.log`) the data you get back from each `$http` request!
-* <details><summary>Click for a hint on how to change the page url from within a controller.</summary>
-    Inject the [`$location`](https://docs.angularjs.org/api/ng/service/$location) service, and use its `path` method. 
+* Once you add client-side routing,  Angular will need to be served from a server. Run `npm install -g budo`, then `budo -P --host=localhost --open` from the Terminal (inside your project directory). This will assume there is an `index.html` in the directory and serve it up! *The `index.html` must be in your main project directory for this server setup.*
+* The books API is RESTful, so follow conventions.  You can test endpoints with [cURL](https://curl.haxx.se/docs/manpage.html) or [Postman](https://www.getpostman.com/), or by setting up a simple request to trigger them. 
+* `console.log` or make global the data you get back from each `$http` request!
+* Refer to the previous labs/lessons.
 
-    * <details><summary>click for example</summary>  
-    
-      ```js  
-      // inside GoatsShowController, we want to send the user back to goats index (home page) automatically
-      $location.path('/');
-      ```
-      </details>
-      
-  </details>
-  
-* <details><summary>Click for a hint on the format of template URLs when using local HTML files.</summary> 
-    Give the full file name: `templates/goats-show.html`.
-  </details>
-* WDI31's [getting started guide](https://docs.google.com/document/d/1LYBb4JrqoGmbFZhADTeAcnp3WQHht9p4MZ8v3NjjnnY/edit)!
+### Stretch Goals
 
-### Stretch Challenges
-
-2. **Allow the user to edit the book image:** allow the user to change the URL for the book image.
-3. **Add filters to organize the books index page:** add a search bar to filter the books by your search, or buttons to sort them alphabetically by author name or book title.
+* User can sort the books alphabetically by author name or book title
+* User can search for a specific book
+* User can edit a book's image
