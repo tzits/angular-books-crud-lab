@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='booker'>
+<head>
+	<title>Toby Has Read Some Books</title>
+
+    <!-- bootstrap css -->
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+    <!-- angular -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+
+  <!-- ngRoute -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+
+    <script src="public/scripts/app.js"></script>
+    <script src="public/scripts/controllers/BookIndexController.js"></script>
+    <script src="public/scripts/controllers/BookShowController.js"></script>
+
+
+</head>
+<body>
+<h1>CRUD Book App</h1>
+<h2>The Ugly Version</h2>
+<header>Header</header>
+<div class='.col-md-6' ng-view></div>
+
+<footer>Footer</footer>
+</body>
+</html>
