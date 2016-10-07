@@ -6,13 +6,13 @@ Location: SF
 
 # Angular Book App
 
-### What are the objectives?
+### Deliverables?
 <!-- specific/measurable goal for students to achieve -->
-*After this training, developers will be able to:*
+*Developers will implement:*
 
-- set up an angular app.
-- use `$http` to access a RESTful API.
-- practice routing in Angular using `ngRoute`.
+- an angular app that can CRUD an API.
+- `$http` (or `$resource`) to access the API.
+- `ngRoute` to handle client-side routing.
 
 
 Deliberate practice is a really effective way to build skills. You've learned about a lot of key pieces of an Angular app, and now it's time to put those pieces together.  You'll be expected to be able to build an Angular app from scratch.
