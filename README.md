@@ -6,7 +6,7 @@ Location: SF
 
 # Angular Book App
 
-### Deliverables?
+### Deliverables
 <!-- specific/measurable goal for students to achieve -->
 *Developers will implement:*
 
