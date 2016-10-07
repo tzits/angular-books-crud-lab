@@ -2,17 +2,18 @@ angular
   .module('booker')
   .controller('BooksShowController', BooksShowController);
 
-BooksShowController.$inject = ['$http', '$routeParams'];
-  function BooksShowController (  $http,   $routeParams  ) {
+BooksShowController.$inject = ['$http', '$routeParams', '$location'];
+  function BooksShowController (  $http,   $routeParams, $location  ) {
     var vm = this;
     console.log($routeParams);
     var bookId= $routeParams.id
     console.log(bookId)
     $http({
       method: 'GET',
-      url: '/api/'+ bookId  // how can we get the id? (hint: check console log from above)
-    }).then(function successCallback(json) {
-      vm.book = json.data;
-      console.log(vm.book)
+      url: 'https://super-crud.herokuapp.com/books/'+bookId
+    }).then(function onBookShowSuccess(response) {
+      console.log('so far so good')
+      console.log(response)
+      vm.book = response.data;
     });
   }

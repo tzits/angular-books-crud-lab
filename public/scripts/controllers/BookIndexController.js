@@ -13,7 +13,6 @@ function BooksIndexController ($http) {
     console.log(response)
     console.log('books')
     vm.books = response.data.books;
-
   }, function errorCallback(response) {
     console.log('There was an error getting the data', response);
   });
